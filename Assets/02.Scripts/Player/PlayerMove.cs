@@ -20,8 +20,8 @@ public class PlayerMove : MonoBehaviour
     private void Update()
     {
         Move();
+        
         SpeedChange();
-
     }
 
     private void Move()
