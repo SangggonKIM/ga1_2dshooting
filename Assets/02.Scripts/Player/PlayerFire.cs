@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PlayerFire : MonoBehaviour
@@ -6,29 +7,59 @@ public class PlayerFire : MonoBehaviour
     // 필요 속성
     // - 총알 프리팹
     public GameObject BulletPrefab;
+    public GameObject AssistBulletPrefab;
     // - 생성 위치(총구)
     public Transform[] FirePoint;
+    public Transform[] AssistFirePoint;
     public float FireRate;
     private float _nextTime = 0.0f;
+    private bool _autoFireToggle = false;
 
     private void Update()
     {
-        Fire();
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            AutoFire();
+        }
+
+        ManualFire();
+
     }
 
-    private void Fire()
+    private void ManualFire()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _nextTime)
+        if (Time.time > _nextTime)
         {
-            foreach (Transform firePoint in FirePoint)
+            if (Input.GetKey(KeyCode.Space) || _autoFireToggle)
             {
-                Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
+                FireBullet();
+                _nextTime = Time.time + FireRate;
             }
-            
-            _nextTime = Time.time + FireRate;
+
         }
 
 
 
+    }
+    private void AutoFire()
+    {
+        _autoFireToggle = !_autoFireToggle;
+    }
+
+    private void FireBullet()
+    {
+        BasicFireBullet(BulletPrefab, FirePoint);
+    }
+    private void FireAssistBullet()
+    {
+        BasicFireBullet(AssistBulletPrefab, AssistFirePoint);
+    }
+
+    private void BasicFireBullet(GameObject bulletPerfab, Transform[] basicFirePoint )
+    {
+        foreach (Transform firePoint in basicFirePoint)
+        {
+            Instantiate(bulletPerfab, firePoint.position, firePoint.rotation);
+        }
     }
 }
