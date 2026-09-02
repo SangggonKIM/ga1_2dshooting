@@ -33,6 +33,7 @@ public class PlayerFire : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) || _autoFireToggle)
             {
                 FireBullet();
+                FireAssistBullet();
                 _nextTime = Time.time + FireRate;
             }
 
