@@ -8,6 +8,8 @@ public class PlayerFire : MonoBehaviour
     public GameObject BulletPrefab;
     // - 생성 위치(총구)
     public Transform[] FirePoint;
+    public float FireRate;
+    private float _nextTime = 0.0f;
 
     private void Update()
     {
@@ -16,13 +18,16 @@ public class PlayerFire : MonoBehaviour
 
     private void Fire()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && Time.time > _nextTime)
         {
             foreach (Transform firePoint in FirePoint)
             {
                 Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
             }
+            
+            _nextTime = Time.time + FireRate;
         }
+
 
 
     }
