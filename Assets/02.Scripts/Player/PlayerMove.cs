@@ -7,6 +7,7 @@ public class PlayerMove : MonoBehaviour
     // 필요 필드:
     public float Speed;
     private Vector2 _xBound = new Vector2(1.85f, 0); // x축 이동 제한 범위
+    private Vector2 _xMoveOhterside = new Vector2(2.91f, 0); // x축 화면 넘어갈시 반대쪽 이동
     private Vector2 _yTopBound = new Vector2(0, -0.7f); // y축 위쪽 이동 제한 범위
     private Vector2 _yBottomBound = new Vector2(0, -4.72f); // y축 위쪽 이동 제한 범위
     
@@ -41,13 +42,13 @@ public class PlayerMove : MonoBehaviour
             Vector2 normalizedDirection = direction.normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
             transform.Translate(normalizedDirection * Speed * Time.deltaTime);
             Vector2 playerPosition = transform.position;
-            if (playerPosition.x > _xBound.x)
+            if (playerPosition.x > _xMoveOhterside.x)
             {
-                playerPosition.x = _xBound.x;
+                playerPosition.x = -_xMoveOhterside.x;
             }
-            else if (playerPosition.x < -_xBound.x)
+            else if (playerPosition.x < -_xMoveOhterside.x)
             {
-                playerPosition.x = -_xBound.x;
+                playerPosition.x = _xMoveOhterside.x;
             }
             if (playerPosition.y > _yTopBound.y)
             {
