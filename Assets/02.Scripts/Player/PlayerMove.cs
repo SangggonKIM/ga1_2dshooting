@@ -6,6 +6,8 @@ public class PlayerMove : MonoBehaviour
     
     // 필요 필드:
     public float Speed;
+    public float IncreaseSpeed = 1.0f;
+    public float DecreaseSpeed = -1.0f;
     private Vector2 _xBound = new Vector2(1.85f, 0); // x축 이동 제한 범위
     private Vector2 _xMoveOhterside = new Vector2(2.91f, 0); // x축 화면 넘어갈시 반대쪽 이동
     private Vector2 _yTopBound = new Vector2(0, -0.7f); // y축 위쪽 이동 제한 범위
@@ -37,7 +39,18 @@ public class PlayerMove : MonoBehaviour
             // 헷갈리는 숫자 코드에 사용 가능한 숫자는 0, 1 만
             // Speed = 0.06f
             // deltaTime: 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 MS로 반환
-            
+            if(Input.GetKey(KeyCode.E))
+            {
+                Speed += IncreaseSpeed *  Time.deltaTime;
+            }
+            else if (Input.GetKey(KeyCode.Q))
+            {
+                Speed += DecreaseSpeed * Time.deltaTime;
+                if (Speed <= 0)
+                {
+                    Speed += IncreaseSpeed * Time.deltaTime;
+                }
+            }
 
             Vector2 normalizedDirection = direction.normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
             transform.Translate(normalizedDirection * Speed * Time.deltaTime);
