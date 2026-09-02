@@ -7,19 +7,23 @@ public class PlayerFire : MonoBehaviour
     // - 총알 프리팹
     public GameObject BulletPrefab;
     // - 생성 위치(총구)
-    public Transform FirePoint;
+    public Transform[] FirePoint;
 
     private void Update()
     {
-        // 1. 스페이스바를 누르면
+        Fire();
+    }
+
+    private void Fire()
+    {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            // 2. 총알 프리팹을 생성한다.
-            // Instantiate는 프리팹을 복사해서 게임 오브젝트를 생성하고 씬에 넣어주는 기능
-            // Instantiate의 뜻은 클래스를 실제 값인 인스턴스로 만드는 과정을 인스턴시에이트라고 한다. (인스턴스화) 총알틀 to 총알
-            GameObject bullet = Instantiate(BulletPrefab);
-            bullet.transform.position = FirePoint.position; // 생성한 총알의 위치를 총구의 위치로~
+            foreach (Transform firePoint in FirePoint)
+            {
+                Instantiate(BulletPrefab, firePoint.position, firePoint.rotation);
+            }
         }
-        
+
+
     }
 }
