@@ -19,6 +19,13 @@ public class PlayerMove : MonoBehaviour
     
     private void Update()
     {
+        Move();
+        SpeedChange();
+
+    }
+
+    private void Move()
+    {
         // 1. 키보드 입력을 받는다.
         float h = Input.GetAxis("Horizontal"); // 키보드 왼/오른쪽 입력 상태에 따라 -1f ~ 0 ~ 1f
         float v = Input.GetAxis("Vertical"); //키보드 위/아래 입력 상태에 따라 -1f ~ 0 ~ 1f
@@ -39,18 +46,7 @@ public class PlayerMove : MonoBehaviour
             // 헷갈리는 숫자 코드에 사용 가능한 숫자는 0, 1 만
             // Speed = 0.06f
             // deltaTime: 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 MS로 반환
-            if(Input.GetKeyDown(KeyCode.E))
-            {
-                Speed += IncreaseSpeed;
-            }
-            else if (Input.GetKeyDown(KeyCode.Q))
-            {
-                Speed += DecreaseSpeed;
-                if (Speed <= 0)
-                {
-                    Speed += IncreaseSpeed;
-                }
-            }
+
 
             Vector2 normalizedDirection = direction.normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
             transform.Translate(normalizedDirection * Speed * Time.deltaTime);
@@ -76,6 +72,21 @@ public class PlayerMove : MonoBehaviour
 
             // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
             // transform.position += (Vector3)direction * Speed * Time.deltaTime;
+    }
 
+    private void SpeedChange()
+    {
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            Speed += IncreaseSpeed;
+        }
+        else if (Input.GetKeyDown(KeyCode.Q))
+        {
+            Speed += DecreaseSpeed;
+            if (Speed <= 0)
+            {
+                Speed += IncreaseSpeed;
+            }
+        }
     }
 }
