@@ -34,8 +34,12 @@ public class PlayerMove : MonoBehaviour
             // Speed = 0.06f
             // deltaTime: 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 MS로 반환
             
+
+            Vector2 normalizedSpeed = (direction * Speed).normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
+            transform.Translate(direction * Speed * Time.deltaTime);
+            
             // 새로운 위치 = 현재 위치 + (방향 * 속력 * 시간)
-            transform.position += (Vector3)direction * Speed * Time.deltaTime;
+            // transform.position += (Vector3)direction * Speed * Time.deltaTime;
 
     }
 }
