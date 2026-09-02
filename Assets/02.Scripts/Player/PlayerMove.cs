@@ -39,16 +39,16 @@ public class PlayerMove : MonoBehaviour
             // 헷갈리는 숫자 코드에 사용 가능한 숫자는 0, 1 만
             // Speed = 0.06f
             // deltaTime: 이전 프레임으로부터 지금 프레임까지 시간이 얼마나 지났는지 MS로 반환
-            if(Input.GetKey(KeyCode.E))
+            if(Input.GetKeyDown(KeyCode.E))
             {
-                Speed += IncreaseSpeed *  Time.deltaTime;
+                Speed += IncreaseSpeed;
             }
-            else if (Input.GetKey(KeyCode.Q))
+            else if (Input.GetKeyDown(KeyCode.Q))
             {
-                Speed += DecreaseSpeed * Time.deltaTime;
+                Speed += DecreaseSpeed;
                 if (Speed <= 0)
                 {
-                    Speed += IncreaseSpeed * Time.deltaTime;
+                    Speed += IncreaseSpeed;
                 }
             }
 
