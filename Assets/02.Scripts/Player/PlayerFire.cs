@@ -7,7 +7,9 @@ public class PlayerFire : MonoBehaviour
     // 필요 속성
     // - 총알 프리팹
     public GameObject BulletPrefab;
+
     public GameObject AssistBulletPrefab;
+
     // - 생성 위치(총구)
     public Transform[] FirePoint;
     public Transform[] AssistFirePoint;
@@ -23,7 +25,6 @@ public class PlayerFire : MonoBehaviour
         }
 
         ManualFire();
-
     }
 
     private void ManualFire()
@@ -36,12 +37,9 @@ public class PlayerFire : MonoBehaviour
                 FireAssistBullet();
                 _nextTime = Time.time + FireRate;
             }
-
         }
-
-
-
     }
+
     private void AutoFire()
     {
         _autoFireToggle = !_autoFireToggle;
@@ -51,16 +49,17 @@ public class PlayerFire : MonoBehaviour
     {
         BasicFireBullet(BulletPrefab, FirePoint);
     }
+
     private void FireAssistBullet()
     {
         BasicFireBullet(AssistBulletPrefab, AssistFirePoint);
     }
 
-    private void BasicFireBullet(GameObject bulletPerfab, Transform[] basicFirePoint )
+    private void BasicFireBullet(GameObject bulletPrefab, Transform[] basicFirePoint)
     {
         foreach (Transform firePoint in basicFirePoint)
         {
-            Instantiate(bulletPerfab, firePoint.position, firePoint.rotation);
+            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
     }
 }
