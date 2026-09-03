@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6838120751319867745}
   - component: {fileID: 3321975374701331967}
   - component: {fileID: 8553664578767092184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 816db9f2f972df446bf8b7e52047178c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
+  Health: 100
   MoveSpeed: 1
 --- !u!61 &3321975374701331967
 BoxCollider2D:

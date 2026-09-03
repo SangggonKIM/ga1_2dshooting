@@ -128,7 +128,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 161327399}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightAssistFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -159,7 +159,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 279033506}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -473,7 +473,7 @@ GameObject:
   - component: {fileID: 883013357}
   - component: {fileID: 883013359}
   - component: {fileID: 883013358}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -737,7 +737,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1548913290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 'LeftAssistFirePoint '
   m_TagString: Untagged
   m_Icon: {fileID: 2974397684917235467, guid: 0000000000000000d000000000000000, type: 0}
@@ -768,7 +768,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1565155477}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 5721338939258241955, guid: 0000000000000000d000000000000000, type: 0}
