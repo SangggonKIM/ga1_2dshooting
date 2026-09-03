@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class BulletFire : MonoBehaviour
@@ -17,10 +18,32 @@ public class BulletFire : MonoBehaviour
         transform.Translate(Direction * Speed * Time.deltaTime);
     }
 
+    // 트리거 관련 이벤트
+    private void OnTriggerEnter2D(Collider2D collider)
+    {
+        Debug.Log("충돌 해브렸다.!");
+
+        // 나 죽고
+        Destroy(this.gameObject);
+
+        // 충돌한 친구가 Enemy일때만 죽어뿔자!
+        if (collider.gameObject.CompareTag("Enemy"))
+        {
+            // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
+            Enemy enemy = collider.gameObject.GetComponent<Enemy>();
+
+            // 응집도는 높히고, 결합도는 낮춰라
+            // 결합도란 묻는거.. 매번 묻는거..
+            // 무적모드 검사하고
+            // 방어력 검사..
+            enemy.TakeDamage(BulletDamage);
+        }
+    }
+
     // 충돌 관련 이벤트 (Enter -> stay -> Exit)
 
     // 충돌이 시작되면 호출되는 이벤트 함수
-    private void OnCollisionEnter2D(Collision2D collision)
+    /*private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("충돌 해브렸다.!");
 
@@ -32,14 +55,14 @@ public class BulletFire : MonoBehaviour
         {
             // GetComponent<타입>() -> 게임 오브젝트가 가지고 있는 컴포넌트를 참조
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.Health -= BulletDamage;
-            if (enemy.Health <= 0)
-            {
-                // 너죽자!
-                Destroy(collision.gameObject);
-            }
+
+            // 응집도는 높히고, 결합도는 낮춰라
+            // 결합도란 묻는거.. 매번 묻는거..
+            // 무적모드 검사하고
+            // 방어력 검사..
+            enemy.TakeDamage(BulletDamage);
         }
-    }
+    }*/
 
     private void OnCollisionStay2D(Collision2D collision)
     {

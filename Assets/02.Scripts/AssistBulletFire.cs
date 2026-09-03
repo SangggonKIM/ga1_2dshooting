@@ -25,11 +25,7 @@ public class AssistBulletFire : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Enemy enemy = collision.gameObject.GetComponent<Enemy>();
-            enemy.Health -= AssistBulletDamage;
-            if (enemy.Health <= 0)
-            {
-                Destroy(collision.gameObject);
-            }
+            enemy.TakeDamage(AssistBulletDamage);
         }
     }
 }
