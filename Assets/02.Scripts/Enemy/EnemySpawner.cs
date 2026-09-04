@@ -33,7 +33,21 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         int totalChances = 0;
-        Enemy enemy = Instantiate(_enemyPrefab);
-        enemy.transform.position = transform.position;
+        foreach (int i in _chances)
+        {
+            totalChances += i;
+        }
+        int randomValue = Random.Range(0, totalChances);
+        int chanceSum = 0;
+        for (int i = 0; i < _enemies.Length; i++)
+        {
+            chanceSum += _chances[i];
+            if (randomValue < chanceSum)
+            {
+                Enemy enemy = Instantiate(_enemies[i]);
+                enemy.transform.position = transform.position;
+                break;
+            }
+        }
     }
 }

@@ -49,4 +49,5 @@ MonoBehaviour:
   - {fileID: 5651561827674190282, guid: 1c12ed8251296704ca7e3c80e1c5ddc2, type: 3}
   - {fileID: 5628038946224260205, guid: c154fc1182cb53a4eb933367928b4f40, type: 3}
   - {fileID: -2308555257129299247, guid: 92bd0638cc28115418417beaccef1680, type: 3}
+  _chances: 050000000300000002000000
   _enemyPrefab: {fileID: 0}

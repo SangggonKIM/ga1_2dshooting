@@ -27,9 +27,9 @@ public abstract class Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player")) return;
+        collision.gameObject.CompareTag("Player");
         Player player = collision.gameObject.GetComponent<Player>();
-        if (player == null)
+        if (player == null && collision.gameObject.tag == "Player")
         {
             Debug.LogWarning("플레이어가 NULL 입니다.");
             return;
