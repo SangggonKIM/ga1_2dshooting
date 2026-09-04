@@ -2,9 +2,10 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    [SerializeField] private float _damage = 30.0f;
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed = 1.0f;
-    [SerializeField] private float _damage = 30.0f;
+
 
     private void Update()
     {
