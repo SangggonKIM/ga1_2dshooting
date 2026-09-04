@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 59746446928638477}
   - component: {fileID: 975631983151976720}
   - component: {fileID: 4154172294399085842}
+  - component: {fileID: 5628038946224260205}
   m_Layer: 8
   m_Name: EnemyLinearDownToPlayer
   m_TagString: Enemy
@@ -166,3 +167,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &5628038946224260205
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4888854299702765957}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e0a885ef67d4b5b8826cc83330d6544, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyLinearDownToPlayer
+  _health: 100
+  _moveSpeed: 1
