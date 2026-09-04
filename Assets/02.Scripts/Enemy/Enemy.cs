@@ -29,7 +29,7 @@ public abstract class Enemy : MonoBehaviour
     {
         collision.gameObject.CompareTag("Player");
         Player player = collision.gameObject.GetComponent<Player>();
-        if (player == null && collision.gameObject.tag == "Player")
+        if (player == null)
         {
             Debug.LogWarning("플레이어가 NULL 입니다.");
             return;

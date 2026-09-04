@@ -39,6 +39,9 @@ public class EnemySpawner : MonoBehaviour
         }
         int randomValue = Random.Range(0, totalChances);
         int chanceSum = 0;
+        // Todo: Scriptable Object를 사용해서 리펙토링
+        // 이유 1: 배열을 사용했지만 각 아이템이 어떤 프리팹인지 알수가 없음
+        // 이유 2: 각 에너미 스폰 확률을 매직 넘버로 하드코딩해서 유지보수가 어렵
         for (int i = 0; i < _enemies.Length; i++)
         {
             chanceSum += _chances[i];
