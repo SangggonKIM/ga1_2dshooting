@@ -4,8 +4,8 @@ public class PlayerMove : MonoBehaviour
 {
     // 목적: 키보드 입력에 따라서 플레이어 이동 처리를 하고 싶다.
     // 필요 필드:
-    public float Speed;
     public float IncreaseSpeed = 1.0f;
+    public float Speed;
     public float DecreaseSpeed = -1.0f;
     private Vector2 _xBound = new Vector2(1.85f, 0); // x축 이동 제한 범위
     private Vector2 _xMoveOhterside = new Vector2(2.91f, 0); // x축 화면 넘어갈시 반대쪽 이동
