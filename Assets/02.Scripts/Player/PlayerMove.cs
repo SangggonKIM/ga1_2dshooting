@@ -7,7 +7,6 @@ public class PlayerMove : MonoBehaviour
     public float IncreaseSpeed = 1.0f;
     public float Speed;
     public float DecreaseSpeed = -1.0f;
-    [SerializeField] private float _health = 100.0f;
     [SerializeField] private Vector2 _xBound = new Vector2(1.85f, 0); // x축 이동 제한 범위
     private Vector2 _xMoveOhterside = new Vector2(2.91f, 0); // x축 화면 넘어갈시 반대쪽 이동
     private Vector2 _yTopBound = new Vector2(0, -0.7f); // y축 위쪽 이동 제한 범위
@@ -89,12 +88,5 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
-    public void TakeDamage(float damage)
-    {
-        _health -= damage;
-        if (_health <= 0)
-        {
-            Destroy(gameObject);
-        }
-    }
+
 }

@@ -6,6 +6,8 @@ public class EnemySpawner : MonoBehaviour
     // - 타이머
     [Header("스폰 간격")][SerializeField] private float _spawnInterval = 3f;
     private float _timer;
+    [SerializeField] private Enemy[] _enemies;
+    [SerializeField] private int[] _chances;
 
     // - 생성할 프리팹
     [Header("스폰할 적 프리팹")][SerializeField] private Enemy _enemyPrefab;
@@ -30,6 +32,7 @@ public class EnemySpawner : MonoBehaviour
 
     private void Spawn()
     {
+        int totalChances = 0;
         Enemy enemy = Instantiate(_enemyPrefab);
         enemy.transform.position = transform.position;
     }

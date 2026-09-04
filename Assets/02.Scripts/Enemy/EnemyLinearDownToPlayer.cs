@@ -16,6 +16,7 @@ public class EnemyLinearDownToPlayer : Enemy
 
     protected override void MoveAction()
     {
+        if (_player == null) return;
         transform.Translate(_direction * _moveSpeed * Time.deltaTime);
     }
 }
