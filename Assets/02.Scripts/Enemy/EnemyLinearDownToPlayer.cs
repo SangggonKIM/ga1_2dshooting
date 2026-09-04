@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class EnemyLinearDownToPlayer : Enemy
 {
-    private GameObject _player;
     private Vector2 _direction;
+    private GameObject _player;
 
 
     private void Start()
