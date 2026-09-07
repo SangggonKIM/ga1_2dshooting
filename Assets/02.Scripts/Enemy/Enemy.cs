@@ -7,7 +7,17 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] private float _damage = 30.0f;
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed = 1.0f;
+    private int _animHit = Animator.StringToHash("hitTrigger");
+    private Animator _animator;
+    private void Awake()
+    {
+        // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
+        _animator = GetComponent<Animator>();
+    }
 
+    private void Start()
+    {
+    }
 
     private void Update()
     {
@@ -19,6 +29,7 @@ public abstract class Enemy : MonoBehaviour
 
     public void TakeDamage(float damage)
     {
+        _animator.SetTrigger(_animHit);
         _health -= damage;
         if (_health <= 0)
         {
