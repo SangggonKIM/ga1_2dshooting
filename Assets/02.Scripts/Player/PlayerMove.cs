@@ -4,6 +4,7 @@ public class PlayerMove : MonoBehaviour
 {
     // 목적: 키보드 입력에 따라서 플레이어 이동 처리를 하고 싶다.
     // 필요 필드:
+    private int _animX = Animator.StringToHash("x");
     private Animator _animator;
     public float IncreaseSpeed = 1.0f;
     public float Speed;
@@ -48,8 +49,7 @@ public class PlayerMove : MonoBehaviour
         // transform.Translate(direction * Speed * Time.deltaTime);
         // 매직 넘버란: 마법처럼 보는 사람마다 의미가 달라질 수 있는
         Vector2 normalizedDirection = direction.normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
-        int animX = Animator.StringToHash("x");
-        _animator.SetInteger(animX, (int)normalizedDirection.x);
+        _animator.SetInteger(_animX, (int)normalizedDirection.x);
         transform.Translate(normalizedDirection * Speed * Time.deltaTime);
         Vector2 playerPosition = transform.position;
         if (playerPosition.x > _xMoveOhterside.x)

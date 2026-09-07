@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 975631983151976720}
   - component: {fileID: 4154172294399085842}
   - component: {fileID: 5628038946224260205}
+  - component: {fileID: -8204008868582794011}
   m_Layer: 8
   m_Name: EnemyLinearDownToPlayer
   m_TagString: Enemy
@@ -190,3 +191,25 @@ MonoBehaviour:
   _damage: 30
   _health: 100
   _moveSpeed: 1
+--- !u!95 &-8204008868582794011
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4888854299702765957}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
