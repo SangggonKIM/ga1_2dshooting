@@ -48,7 +48,8 @@ public class PlayerMove : MonoBehaviour
         // transform.Translate(direction * Speed * Time.deltaTime);
         // 매직 넘버란: 마법처럼 보는 사람마다 의미가 달라질 수 있는
         Vector2 normalizedDirection = direction.normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
-        _animator.SetInteger("x", (int)normalizedDirection.x);
+        int animX = Animator.StringToHash("x");
+        _animator.SetInteger(animX, (int)normalizedDirection.x);
         transform.Translate(normalizedDirection * Speed * Time.deltaTime);
         Vector2 playerPosition = transform.position;
         if (playerPosition.x > _xMoveOhterside.x)
