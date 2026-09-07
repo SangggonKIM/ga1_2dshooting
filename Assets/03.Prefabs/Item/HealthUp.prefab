@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 483844061604783632}
   - component: {fileID: 1267429303193174654}
   - component: {fileID: -4255961469717530065}
-  - component: {fileID: -4123601268006851323}
+  - component: {fileID: -5573158663650759772}
   m_Layer: 3
   m_Name: HealthUp
   m_TagString: Untagged
@@ -146,7 +146,7 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 1
---- !u!114 &-4123601268006851323
+--- !u!114 &-5573158663650759772
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4173799365113630101}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef3cfff49e14fd45bff5358bf44f467, type: 3}
+  m_Script: {fileID: 11500000, guid: 2f2f75144021e604dbb2aa4327274ebc, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
+  m_EditorClassIdentifier: Assembly-CSharp::ItemHealthUp
   SpawnTime: 1
-  _moveSpeed: 1
+  _moveSpeed: 8

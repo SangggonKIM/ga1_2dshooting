@@ -63,6 +63,5 @@ public abstract class Enemy : MonoBehaviour
                 randomProbability -= _spawnProbability[i];
             }
         }
-        Instantiate(_itemList[_itemList.Length - 1], transform.position, transform.rotation);
     }
 }

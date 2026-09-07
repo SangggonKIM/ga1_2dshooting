@@ -88,5 +88,17 @@ public class PlayerMove : MonoBehaviour
         }
     }
 
+    public void SpeedUp(float upValue)
+    {
+        if (upValue < 0)
+        {
+            Debug.LogWarning("속도 증가량은 0보다 작을 수 없습니다.");
+            return;
+        }
+
+        Speed += upValue;
+        // 최대 속도를 제한하는 메서드르 추가할수도 있다.
+    }
+
 
 }

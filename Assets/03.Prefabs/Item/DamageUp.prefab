@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3396939344088777650}
   - component: {fileID: 7157101161492027422}
   - component: {fileID: 1556274263347512684}
-  - component: {fileID: -2343773364164271869}
+  - component: {fileID: 8115923929613504551}
   m_Layer: 3
   m_Name: DamageUp
   m_TagString: Untagged
@@ -146,7 +146,7 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 1
---- !u!114 &-2343773364164271869
+--- !u!114 &8115923929613504551
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 1820207482108967171}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef3cfff49e14fd45bff5358bf44f467, type: 3}
+  m_Script: {fileID: 11500000, guid: 1181c900c14d2ed40a5a447818493e9a, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
+  m_EditorClassIdentifier: Assembly-CSharp::ItemDamgeUp
   SpawnTime: 1
-  _moveSpeed: 1
+  _moveSpeed: 8

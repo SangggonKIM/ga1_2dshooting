@@ -1,12 +1,13 @@
+using System;
 using UnityEngine;
 
 public class ItemDamgeUp : Item
 {
-    private void Start()
+    private Bullet _bullet;
+    private void OnTriggerEnter2D(Collider2D player)
     {
-    }
-
-    private void Update()
-    {
+        Destroy(gameObject);
+        Debug.Log("부딪힘");
+        _bullet.IncreaseDamage();
     }
 }

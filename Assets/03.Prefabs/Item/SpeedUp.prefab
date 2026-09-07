@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 5934259283048429008}
   - component: {fileID: 8388038014903231616}
   - component: {fileID: -6469469968685444851}
-  - component: {fileID: 2037899030133779988}
+  - component: {fileID: 669416818463479956}
   m_Layer: 3
   m_Name: SpeedUp
   m_TagString: Untagged
@@ -146,7 +146,7 @@ PolygonCollider2D:
       - {x: 0.5, y: 0}
       - {x: 0.25, y: 0.43359375}
   m_UseDelaunayMesh: 1
---- !u!114 &2037899030133779988
+--- !u!114 &669416818463479956
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -155,8 +155,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 4257761387120934274}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4ef3cfff49e14fd45bff5358bf44f467, type: 3}
+  m_Script: {fileID: 11500000, guid: 6139603ee4f7e814b95bde2f076366e1, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Item
+  m_EditorClassIdentifier: Assembly-CSharp::ItemSpeedUp
   SpawnTime: 1
-  _moveSpeed: 1
+  _moveSpeed: 8
