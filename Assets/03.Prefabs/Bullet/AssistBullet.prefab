@@ -107,8 +107,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AssistBulletFire
   Speed: 16
-  BulletDamage: 30
-  _plusDamage: 100
+  BulletDamage: 10
 --- !u!50 &-3425471858860173336
 Rigidbody2D:
   serializedVersion: 5
