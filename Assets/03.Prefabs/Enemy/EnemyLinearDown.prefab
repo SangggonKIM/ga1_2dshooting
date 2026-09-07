@@ -179,5 +179,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a24b8159d4445db67eb82c41738e33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLinearDown
+  _itemList:
+  - {fileID: 1820207482108967171, guid: 0912f9bb2fbcc0c4e856742077fc4989, type: 3}
+  - {fileID: 4173799365113630101, guid: f44ee85c6b510e24c93363c854b3f33a, type: 3}
+  - {fileID: 4257761387120934274, guid: 723e8f5935a4ad748a0c22e83c6782fa, type: 3}
+  _spawnProbability:
+  - 30
+  - 30
+  - 30
+  _damage: 30
   _health: 100
   _moveSpeed: 1

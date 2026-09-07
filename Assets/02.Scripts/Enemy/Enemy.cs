@@ -2,6 +2,8 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
+    [Header("아이템 목록 지정")][SerializeField] private GameObject[] _itemList;
+    [SerializeField] private float[] _spawnProbability;
     [SerializeField] private float _damage = 30.0f;
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed = 1.0f;
@@ -22,6 +24,7 @@ public abstract class Enemy : MonoBehaviour
         {
             // 너죽자!
             Destroy(gameObject);
+            ItemSpawn();
         }
     }
 
@@ -36,5 +39,30 @@ public abstract class Enemy : MonoBehaviour
         }
         player.TakeDamage(_damage);
         Destroy(gameObject);
+    }
+
+    private void ItemSpawn()
+    {
+        float total = 0;
+        foreach (float probability in _spawnProbability)
+        {
+            total += probability;
+        }
+
+        float randomProbability = Random.value * total;
+
+        for (int i = 0; i < _itemList.Length; i++)
+        {
+            if (randomProbability < _spawnProbability[i])
+            {
+                Instantiate(_itemList[i], transform.position, transform.rotation);
+                break;
+            }
+            else
+            {
+                randomProbability -= _spawnProbability[i];
+            }
+        }
+        Instantiate(_itemList[_itemList.Length - 1], transform.position, transform.rotation);
     }
 }
