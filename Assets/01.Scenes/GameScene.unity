@@ -809,7 +809,8 @@ MonoBehaviour:
   AssistFirePoint:
   - {fileID: 1548913290}
   - {fileID: 161327399}
-  FireRate: 1
+  CoolTime: 1
+  CoolTimer: 0
 --- !u!50 &883013358
 Rigidbody2D:
   serializedVersion: 5

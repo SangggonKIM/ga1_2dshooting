@@ -160,3 +160,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemSpeedUp
   SpawnTime: 1
   _moveSpeed: 8
+  _value: 10

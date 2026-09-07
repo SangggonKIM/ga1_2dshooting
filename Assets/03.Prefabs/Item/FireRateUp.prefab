@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1556274263347512684}
   - component: {fileID: 8115923929613504551}
   m_Layer: 3
-  m_Name: DamageUp
+  m_Name: FireRateUp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -160,3 +160,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemDamgeUp
   SpawnTime: 1
   _moveSpeed: 8
+  _value: 0.2

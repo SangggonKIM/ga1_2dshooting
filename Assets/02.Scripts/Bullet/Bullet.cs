@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public abstract class Bullet : MonoBehaviour
+public class Bullet : MonoBehaviour
 {
     // 목적: 총알을 위로 움직이고 싶다.
     public float Speed = 1.0f;
@@ -73,6 +73,4 @@ public abstract class Bullet : MonoBehaviour
     {
         // Debug.Log("충돌이 완료 됐다.!!!");
     }
-
-    public abstract void IncreaseDamage();
 }

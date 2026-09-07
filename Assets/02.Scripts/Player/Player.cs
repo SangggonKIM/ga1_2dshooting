@@ -11,4 +11,14 @@ public class Player : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void Heal(int healAmount)
+    {
+        if (healAmount < 0)
+        {
+            Debug.LogWarning("힐량은 음수일 수 없습니다.");
+            return;
+        }
+        _health += healAmount;
+    }
 }

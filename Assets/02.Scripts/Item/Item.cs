@@ -6,10 +6,16 @@ public class Item : MonoBehaviour
     private float _currenttime = 0f;
     [SerializeField] private float _moveSpeed = 1f;
     private Vector2 _direction;
-    private GameObject _player;
+    private Player _player = null;
+    [SerializeField] protected float _value;
     private void Start()
     {
-        _player = GameObject.FindWithTag("Player");
+        _player = GameObject.FindWithTag("Player").GetComponent<Player>();
+        if (_player == null)
+        {
+            Debug.LogWarning("플레이어를 찾을 수 없습니다.");
+            return;
+        }
     }
 
     private void Update()

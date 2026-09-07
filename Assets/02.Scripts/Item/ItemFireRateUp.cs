@@ -1,17 +1,17 @@
 using UnityEngine;
 
-public class ItemHealthUp : Item
+public class ItemFireRateUp : Item
 {
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (!other.CompareTag("Player")) return;
-        Player player = other.GetComponent<Player>();
+        PlayerFire player = other.GetComponent<PlayerFire>();
         if (player == null)
         {
             Debug.Log("플레이어 태그 오브젝트에 플레이어 컴포넌트가 없습니다.");
             return;
         }
-        player.Heal((int)(_value));
+        player.FireRateUp(_value);
         Destroy(gameObject);
     }
 }

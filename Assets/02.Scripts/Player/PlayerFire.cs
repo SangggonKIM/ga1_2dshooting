@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -13,10 +14,15 @@ public class PlayerFire : MonoBehaviour
     // - 생성 위치(총구)
     public Transform[] FirePoint;
     public Transform[] AssistFirePoint;
-    public float FireRate;
-    private float _nextTime = 0.0f;
+    private const float MinCoolTime = 0.06f;
+    public float CoolTime = 0.5f;
+    public float CoolTimer = 0;
     private bool _autoFireToggle = false;
 
+    private void Start()
+    {
+        CoolTimer = CoolTime;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -29,13 +35,14 @@ public class PlayerFire : MonoBehaviour
 
     private void ManualFire()
     {
-        if (Time.time > _nextTime)
+        CoolTimer -= Time.deltaTime;
+        if (CoolTimer <= 0)
         {
             if (Input.GetKey(KeyCode.Space) || _autoFireToggle)
             {
                 FireBullet();
                 FireAssistBullet();
-                _nextTime = Time.time + FireRate;
+                CoolTimer = CoolTime;
             }
         }
     }
@@ -61,5 +68,16 @@ public class PlayerFire : MonoBehaviour
         {
             Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
         }
+    }
+
+    public void FireRateUp(float upValue)
+    {
+        if (upValue < 0)
+        {
+            Debug.LogWarning("공격 속도 증가량은 0보다 작을 수 없습니다.");
+            return;
+        }
+
+        CoolTime = Math.Max(CoolTime - upValue, MinCoolTime);
     }
 }
