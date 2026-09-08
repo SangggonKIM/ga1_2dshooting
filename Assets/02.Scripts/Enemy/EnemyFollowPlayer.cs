@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class EnemyFollowPlayer : Enemy
 {
-    [SerializeField] private float _rotationOffset = 90f;
+    [SerializeField] private float _rotationOffset = 90f; // 스프라이트가 아래를 보니 조정값 +90
     private GameObject _player;
 
     private void Start()
