@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyFollowPlayer : Enemy
 {
+    [SerializeField] private float _rotationOffset = 90f;
     private GameObject _player;
 
     private void Start()
@@ -19,7 +20,9 @@ public class EnemyFollowPlayer : Enemy
     {
         if (_player == null) return;
         Vector2 direction = _player.transform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle + _rotationOffset, Vector3.forward);
         direction.Normalize();
-        transform.Translate(direction * _moveSpeed * Time.deltaTime);
+        transform.position += (Vector3)(direction * _moveSpeed * Time.deltaTime);
     }
 }

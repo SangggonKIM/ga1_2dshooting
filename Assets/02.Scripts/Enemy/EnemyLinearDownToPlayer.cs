@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyLinearDownToPlayer : Enemy
 {
+    [SerializeField] private float _rotationOffset = 90f;
     private Vector2 _direction;
     private GameObject _player;
 
@@ -11,12 +12,14 @@ public class EnemyLinearDownToPlayer : Enemy
     {
         _player = GameObject.FindWithTag("Player");
         _direction = _player.transform.position - transform.position;
+        float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle + _rotationOffset, Vector3.forward);
         _direction.Normalize();
     }
 
     protected override void MoveAction()
     {
         if (_player == null) return;
-        transform.Translate(_direction * _moveSpeed * Time.deltaTime);
+        transform.position += (Vector3)(_direction * _moveSpeed * Time.deltaTime);
     }
 }
