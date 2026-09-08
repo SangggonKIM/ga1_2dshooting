@@ -7,13 +7,14 @@ public class PlayerMove : MonoBehaviour
     private int _animX = Animator.StringToHash("x");
     private Animator _animator;
     public float IncreaseSpeed = 1.0f;
-    public float Speed;
+    [SerializeField] private float _speed;
     public float DecreaseSpeed = -1.0f;
     [SerializeField] private Vector2 _xBound = new Vector2(1.85f, 0); // x축 이동 제한 범위
     private Vector2 _xMoveOhterside = new Vector2(2.91f, 0); // x축 화면 넘어갈시 반대쪽 이동
     private Vector2 _yTopBound = new Vector2(0, -0.7f); // y축 위쪽 이동 제한 범위
     private Vector2 _yBottomBound = new Vector2(0, -4.72f); // y축 위쪽 이동 제한 범위
 
+    public float Speed => _speed;
     private void Awake()
     {
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
@@ -50,7 +51,7 @@ public class PlayerMove : MonoBehaviour
         // 매직 넘버란: 마법처럼 보는 사람마다 의미가 달라질 수 있는
         Vector2 normalizedDirection = direction.normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
         _animator.SetInteger(_animX, (int)normalizedDirection.x);
-        transform.Translate(normalizedDirection * Speed * Time.deltaTime);
+        transform.Translate(normalizedDirection * _speed * Time.deltaTime);
         Vector2 playerPosition = transform.position;
         if (playerPosition.x > _xMoveOhterside.x)
         {
@@ -80,14 +81,14 @@ public class PlayerMove : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Speed += IncreaseSpeed;
+            _speed += IncreaseSpeed;
         }
         else if (Input.GetKeyDown(KeyCode.Q))
         {
-            Speed += DecreaseSpeed;
-            if (Speed <= 0)
+            _speed += DecreaseSpeed;
+            if (_speed <= 0)
             {
-                Speed += IncreaseSpeed;
+                _speed += IncreaseSpeed;
             }
         }
     }
@@ -100,7 +101,7 @@ public class PlayerMove : MonoBehaviour
             return;
         }
 
-        Speed += upValue;
+        _speed += upValue;
         // 최대 속도를 제한하는 메서드르 추가할수도 있다.
     }
 

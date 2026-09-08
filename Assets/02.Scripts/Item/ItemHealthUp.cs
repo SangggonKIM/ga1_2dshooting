@@ -12,6 +12,7 @@ public class ItemHealthUp : Item
             return;
         }
         player.Heal((int)(_value));
+        Debug.Log($"플레이어 체력: {player.GetHealth()}"); // readonly
         Destroy(gameObject);
     }
 }
