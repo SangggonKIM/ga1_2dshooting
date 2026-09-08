@@ -787,7 +787,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMove
   IncreaseSpeed: 1
-  Speed: 1
+  _speed: 3
   DecreaseSpeed: -1
   _xBound: {x: 1.85, y: 0}
 --- !u!114 &883013357
