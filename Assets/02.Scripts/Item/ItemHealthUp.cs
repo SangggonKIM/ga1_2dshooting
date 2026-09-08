@@ -13,6 +13,7 @@ public class ItemHealthUp : Item
         }
         player.Heal((int)(_value));
         Debug.Log($"플레이어 체력: {player.GetHealth()}"); // readonly
+        ShowGainEffect();
         Destroy(gameObject);
     }
 }

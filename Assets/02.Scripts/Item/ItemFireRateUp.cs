@@ -12,6 +12,7 @@ public class ItemFireRateUp : Item
             return;
         }
         player.FireRateUp(_value);
+        ShowGainEffect();
         Destroy(gameObject);
     }
 }
