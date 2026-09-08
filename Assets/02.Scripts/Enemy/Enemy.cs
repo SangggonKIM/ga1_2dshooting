@@ -9,6 +9,8 @@ public abstract class Enemy : MonoBehaviour
     [SerializeField] protected float _moveSpeed = 1.0f;
     private int _animHit = Animator.StringToHash("hitTrigger");
     private Animator _animator;
+    // - 죽을때 생성할 파티클 프리팹
+    [SerializeField] private GameObject _deathEffectPrefab;
     private void Awake()
     {
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
@@ -34,9 +36,15 @@ public abstract class Enemy : MonoBehaviour
         if (_health <= 0)
         {
             // 너죽자!
+            ShowDeathEffect();
             Destroy(gameObject);
             ItemSpawn();
         }
+    }
+
+    private void ShowDeathEffect()
+    {
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
