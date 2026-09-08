@@ -3,6 +3,7 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _health = 100.0f;
+    [SerializeField] private GameObject _deathEffectPrefab;
 
     public float Health => _health; // 람다식 문법을 활용한 읽기 전용 프로퍼티
     // 잘 설계된 클래스는
@@ -18,6 +19,7 @@ public class Player : MonoBehaviour
         _health -= damage;
         if (_health <= 0)
         {
+            ShowDeathEffect();
             Destroy(gameObject);
         }
     }
@@ -30,5 +32,10 @@ public class Player : MonoBehaviour
             return;
         }
         _health += healAmount;
+    }
+
+    private void ShowDeathEffect()
+    {
+        Instantiate(_deathEffectPrefab, transform.position, Quaternion.identity);
     }
 }
