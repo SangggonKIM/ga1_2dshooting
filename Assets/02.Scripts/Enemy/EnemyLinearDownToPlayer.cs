@@ -14,6 +14,7 @@ public class EnemyLinearDownToPlayer : Enemy
         _direction = _player.transform.position - transform.position;
         float angle = Mathf.Atan2(_direction.y, _direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.AngleAxis(angle + _rotationOffset, Vector3.forward);
+        // Quaternion.Euler(0f, 0f, angle + _rotationOffset) 오일러 좌표에서 Z축으로 회전.
         _direction.Normalize();
     }
 
