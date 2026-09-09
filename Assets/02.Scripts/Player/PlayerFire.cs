@@ -78,6 +78,6 @@ public class PlayerFire : MonoBehaviour
             return;
         }
 
-        CoolTime = Math.Max(CoolTime - upValue, MinCoolTime);
+        CoolTime = Math.Max(CoolTime - upValue, MinCoolTime); // 둘중에 가장 높은수를 선택. 최소 쿨타임보다 작을 수 없다.
     }
 }

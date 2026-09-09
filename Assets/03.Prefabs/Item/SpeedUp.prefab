@@ -161,7 +161,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ItemSpeedUp
   SpawnTime: 1
   _moveSpeed: 8
-  _value: 10
+  _value: 1
   _gainEffectPrefab: {fileID: 2708598583397607911, guid: 6398d43fe79ea0140913dc5530c646af, type: 3}
 --- !u!95 &-2676482808482557982
 Animator:
