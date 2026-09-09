@@ -593,7 +593,7 @@ Transform:
   m_GameObject: {fileID: 467560721}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.8400002, z: 0}
+  m_LocalPosition: {x: 2.57, y: -0.02, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1123,7 +1123,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerBomb
   _bomb: {fileID: 7313878740999647957, guid: 4938892c2e9f4d14cb54a8f9f7f65d45, type: 3}
   _coolTime: 10
-  _bombPosition: {fileID: 467560722}
+  _spawnNumber: 6
+  _bombXRange: 2.5
+  _bombYMaxRange: 5
+  _bombYMinRange: 0
 --- !u!1 &1017452363
 GameObject:
   m_ObjectHideFlags: 0

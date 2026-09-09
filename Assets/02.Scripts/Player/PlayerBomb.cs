@@ -4,7 +4,10 @@ public class PlayerBomb : MonoBehaviour
 {
     [SerializeField] private GameObject _bomb;
     [SerializeField] private float _coolTime = 10f;
-    [SerializeField] private Transform _bombPosition;
+    [SerializeField] private int _spawnNumber = 3;
+    [SerializeField] private float _bombXRange = 2.5f;
+    [SerializeField] private float _bombYMaxRange = 5.0f;
+    [SerializeField] private float _bombYMinRange;
     private float _coolTimer = 0;
     private void Start()
     {
@@ -23,7 +26,11 @@ public class PlayerBomb : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.B))
             {
-                Instantiate(_bomb, _bombPosition.position, Quaternion.identity);
+                for (int i = 0; i < _spawnNumber; i++)
+                {
+                    Vector2 bombPosition = new Vector2(Random.Range(-_bombXRange, _bombXRange), Random.Range(_bombYMinRange, _bombYMaxRange));
+                    Instantiate(_bomb, bombPosition, Quaternion.identity);
+                }
                 _coolTimer = _coolTime;
             }
         }
