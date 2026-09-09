@@ -37,9 +37,9 @@ TextureImporter:
     filterMode: 0
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 24
+  spritePixelsToUnits: 28
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -154,7 +154,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 20
+        width: 144
         height: 288
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -174,9 +174,9 @@ TextureImporter:
       name: Backgrounds_1
       rect:
         serializedVersion: 2
-        x: 124
+        x: 145
         y: 0
-        width: 20
+        width: 144
         height: 288
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -186,7 +186,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2fde0404c85b3b84d91ad9034b0c8c60
+      spriteID: 3f098ab8f0d6aa84db4dd3f3448ab61c
       internalID: 2022253635
       vertices: []
       indices: 
@@ -194,50 +194,6 @@ TextureImporter:
       weights: []
     - serializedVersion: 2
       name: Backgrounds_2
-      rect:
-        serializedVersion: 2
-        x: 145
-        y: 0
-        width: 30
-        height: 288
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 278062349c543224d84ce4ea8846844a
-      internalID: -388496726
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Backgrounds_3
-      rect:
-        serializedVersion: 2
-        x: 259
-        y: 0
-        width: 30
-        height: 288
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d0459a34373d88a4989dd59325f4f734
-      internalID: 1175707533
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Backgrounds_4
       rect:
         serializedVersion: 2
         x: 290
@@ -252,8 +208,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e48d0e930b32c794b9399549472e97a9
-      internalID: -964168987
+      spriteID: 0d1115f97c530244ca3799b487b33f28
+      internalID: -388496726
       vertices: []
       indices: 
       edges: []
@@ -272,15 +228,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":144.0,"y":288.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":1.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
       - key: SpriteEditor.SliceOnImport
         value: False
     nameFileIdTable:
       Backgrounds_0: -1185786039
       Backgrounds_1: 2022253635
       Backgrounds_2: -388496726
-      Backgrounds_3: 1175707533
-      Backgrounds_4: -964168987
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
