@@ -13,10 +13,7 @@ public class PlayerBomb : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.B))
-        {
-            Bomb();
-        }
+        Bomb();
     }
 
     private void Bomb()
@@ -24,8 +21,11 @@ public class PlayerBomb : MonoBehaviour
         _coolTimer -= Time.deltaTime;
         if (_coolTimer <= 0)
         {
-            Instantiate(_bomb, _bombPosition.position, Quaternion.identity);
-            _coolTimer = _coolTime;
+            if (Input.GetKey(KeyCode.B))
+            {
+                Instantiate(_bomb, _bombPosition.position, Quaternion.identity);
+                _coolTimer = _coolTime;
+            }
         }
     }
 }
