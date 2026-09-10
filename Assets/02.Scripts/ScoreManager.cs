@@ -13,7 +13,6 @@ public class ScoreManager : MonoBehaviour
 
     private int _bestScore = 0;
     private int _currentScore = 0;
-    private int _lastRefreshScore = -1;
 
 
     // UI 책임 추가 (텍스트메시 프로 참조)
@@ -44,18 +43,16 @@ public class ScoreManager : MonoBehaviour
         {
             _bestScore = _currentScore;
         }
+        Refresh();
     }
 
     private void Update()
     {
-        Refresh();
     }
 
     private void Refresh()
     {
-        if (_lastRefreshScore == _currentScore) return;
         _bestScoreText.text = $"Best Score: {_bestScore}";
         _currentScoreText.text = $"Current Score: {_currentScore}";
-        _lastRefreshScore = _currentScore;
     }
 }
