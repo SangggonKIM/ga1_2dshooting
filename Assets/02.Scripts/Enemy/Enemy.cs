@@ -37,8 +37,7 @@ public abstract class Enemy : MonoBehaviour
             // 너죽자!
             ShowDeathEffect();
             ItemSpawn();
-            ScoreManager scoreManager = FindObjectOfType<ScoreManager>();
-            scoreManager.AddScore(100);
+            ScoreManager.Instance.AddScore(100);
             Destroy(gameObject);
 
         }
