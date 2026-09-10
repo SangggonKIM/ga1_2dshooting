@@ -3,10 +3,14 @@ using UnityEngine;
 public class BombAttack : MonoBehaviour
 {
     [SerializeField] private float _bombDamage = 9999f;
-
-    private void Start()
+    [SerializeField] private float _timer = 3.0f;
+    private void Update()
     {
-        Destroy(gameObject, 3f);
+        _timer -= Time.deltaTime;
+        if (_timer <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collider)
     {
