@@ -10,10 +10,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1783138168895110420}
   - component: {fileID: 1198535875711082007}
-  - component: {fileID: 997049962073289051}
   - component: {fileID: 4450573539121280951}
   - component: {fileID: 3427713034195057784}
   - component: {fileID: 8645673839303627015}
+  - component: {fileID: 7680240068513549726}
   m_Layer: 7
   m_Name: Bullet
   m_TagString: Untagged
@@ -95,20 +95,6 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &997049962073289051
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1031609591815090324}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9e2c6644067462488d38db9fd4c719c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::BulletFire
-  Speed: 8
-  BulletDamage: 20
 --- !u!58 &4450573539121280951
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -269,3 +255,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7680240068513549726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1031609591815090324}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b46b4f53a400b94f91f3bfb79a3dbc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Bullet
+  Speed: 8
+  BulletDamage: 20
