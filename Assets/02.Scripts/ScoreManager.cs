@@ -11,8 +11,10 @@ public class ScoreManager : MonoBehaviour
     public static ScoreManager Instance => _instance;
     // 관리: 특정 데이터에 대한 무결성과 추가 수정 삭제 등과 관련된 로직
 
-    private int _bestScore = 0;
+    private int _bestScore;
+
     private int _currentScore = 0;
+
     // 저장키
     private const string SaveKey = "BestScore";
 
@@ -30,6 +32,7 @@ public class ScoreManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
+
         _instance = this;
     }
 
@@ -42,12 +45,9 @@ public class ScoreManager : MonoBehaviour
         {
             _bestScore = PlayerPrefs.GetInt(SaveKey);
         }
+
         _bestScore = PlayerPrefs.GetInt(SaveKey, 0);
         Refresh();
-    }
-    public int GetScore()
-    {
-        return _currentScore;
     }
 
     public void AddScore(int score)
@@ -59,14 +59,11 @@ public class ScoreManager : MonoBehaviour
             _bestScore = _currentScore;
             // 저장: PlayerPrefs.Set~ 시리즈를 이용해서 int/float/string을 저장 가능하다.
             // // 내 컴퓨터 어딘가에 저장이 된다..
-            // PlayerPrefs.SetInt("BestScore", _bestScore);
+            PlayerPrefs.SetInt(SaveKey, _bestScore);
             PlayerPrefs.Save();
         }
-        Refresh();
-    }
 
-    private void Update()
-    {
+        Refresh();
     }
 
     private void Refresh()
