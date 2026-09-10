@@ -22,9 +22,13 @@ public class PlayerAutoMove : MonoBehaviour
         Vector3 direction = diff;
 
         // 적과 나와의 y축 차이가 3보다 크면 앞으로 가고 아니라면 뒤로가게
-        if (diff.y < 3)
+        if (diff.y >= 3)
         {
-            direction.y = -direction.y;
+            direction.y = 1;
+        }
+        else
+        {
+            direction.y = -1;
         }
 
         direction.Normalize();
