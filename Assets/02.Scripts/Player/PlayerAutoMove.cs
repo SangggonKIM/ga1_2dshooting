@@ -3,30 +3,57 @@ using UnityEngine;
 public class PlayerAutoMove : MonoBehaviour
 {
     [SerializeField] private float _speed;
+    [SerializeField] private int _stopTrackingY = 2;
+    private GameObject _target = null;
     private void Update()
+    {
+        if (_target == null || _target.transform.position.y < -_stopTrackingY)
+        {
+            FindNearestTarget();
+        }
+        Move();
+    }
+
+    private void Move()
+    {
+        if (_target == null) return;
+        // 2. 방향을 구한다.
+        Vector3 diff = _target.transform.position - transform.position;
+        Vector3 direction = diff;
+
+        // 적과 나와의 y축 차이가 3보다 크면 앞으로 가고 아니라면 뒤로가게
+        if (diff.y < 3)
+        {
+            direction.y = -direction.y;
+        }
+
+        direction.Normalize();
+
+        // 3. 속도에 맞게 이동한다.
+        transform.position += direction * Time.deltaTime * _speed;
+    }
+
+    private void FindNearestTarget()
     {
         // 1. 타겟을 구한다.
         GameObject[] targets = GameObject.FindGameObjectsWithTag("Enemy");
         if (targets.Length == 0) return;
-        GameObject target = targets[0];
+        _target = targets[0];
         float minDistance = float.MaxValue;
         // 1-1. 가장 가까운 타켓을 찾는다.
         foreach (GameObject enemy in targets)
         {
+            if (enemy.transform.position.y < -_stopTrackingY)
+            {
+                continue;
+            }
             float distance = Vector2.Distance(transform.position, enemy.transform.position);
             if (distance < minDistance)
             {
                 // 타켓 변경
                 minDistance = distance;
-                target = enemy;
+                _target = enemy;
             }
         }
-        // 2. 방향을 구한다.
-        Vector3 direction = target.transform.position - transform.position;
-        direction.Normalize();
-        direction.y = 0;
-
-        // 3. 속도에 맞게 이동한다.
-        transform.position += direction * Time.deltaTime * _speed;
     }
 }
