@@ -741,7 +741,7 @@ Transform:
   m_GameObject: {fileID: 243012959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 2.8169, y: -0.83437, z: 0}
+  m_LocalPosition: {x: 2.8169, y: -0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2030,10 +2030,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 1381029370}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 354, y: -44}
-  m_SizeDelta: {x: 700, y: 50}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: -726, y: 1096}
+  m_SizeDelta: {x: 700, y: -2230}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1351855764
 MonoBehaviour:
@@ -2397,6 +2397,34 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3312225058356461496, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
+      propertyPath: _spawnDatas.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312225058356461496, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
+      propertyPath: _spawnDatas.Array.data[0].Percent
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312225058356461496, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
+      propertyPath: _spawnDatas.Array.data[1].Percent
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312225058356461496, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
+      propertyPath: _spawnDatas.Array.data[2].Percent
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 3312225058356461496, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
+      propertyPath: _spawnDatas.Array.data[0].EnemyPrefab
+      value: 
+      objectReference: {fileID: 3343427954868715291, guid: 1c12ed8251296704ca7e3c80e1c5ddc2, type: 3}
+    - target: {fileID: 3312225058356461496, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
+      propertyPath: _spawnDatas.Array.data[1].EnemyPrefab
+      value: 
+      objectReference: {fileID: 4888854299702765957, guid: c154fc1182cb53a4eb933367928b4f40, type: 3}
+    - target: {fileID: 3312225058356461496, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
+      propertyPath: _spawnDatas.Array.data[2].EnemyPrefab
+      value: 
+      objectReference: {fileID: 2197843011683943976, guid: 92bd0638cc28115418417beaccef1680, type: 3}
     - target: {fileID: 6272090716893655897, guid: c8f4bc53de9166e45a4e1ed96b14fac8, type: 3}
       propertyPath: m_Name
       value: EnemySpawnerLeft
