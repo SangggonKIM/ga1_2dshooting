@@ -11,6 +11,7 @@ public class ItemHealthUp : Item
             Debug.Log("플레이어 태그 오브젝트에 플레이어 컴포넌트가 없습니다.");
             return;
         }
+
         player.Heal((int)(_value));
         Debug.Log($"플레이어 체력: {player.GetHealth()}"); // readonly
         ShowGainEffect();

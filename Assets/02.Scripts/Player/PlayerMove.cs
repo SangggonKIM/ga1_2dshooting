@@ -104,6 +104,4 @@ public class PlayerMove : MonoBehaviour
         _speed += upValue;
         // 최대 속도를 제한하는 메서드르 추가할수도 있다.
     }
-
-
 }

@@ -4,8 +4,8 @@ public abstract class Enemy : MonoBehaviour
 {
     [Header("아이템 목록 지정")]
     [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTable;
-    [SerializeField] private float _damage = 30.0f;
     [SerializeField] private float _health = 100;
+    [SerializeField] private float _damage = 30.0f;
     [SerializeField] protected float _moveSpeed = 1.0f;
     private bool _isDead = false;
     private int _animHit = Animator.StringToHash("hitTrigger");

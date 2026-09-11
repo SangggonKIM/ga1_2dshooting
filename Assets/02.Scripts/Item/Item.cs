@@ -9,6 +9,7 @@ public class Item : MonoBehaviour
     private Player _player = null;
     [SerializeField] protected float _value;
     [SerializeField] protected GameObject _gainEffectPrefab;
+
     private void Start()
     {
         _player = GameObject.FindWithTag("Player").GetComponent<Player>();
@@ -29,6 +30,7 @@ public class Item : MonoBehaviour
             transform.Translate(_direction * _moveSpeed * Time.deltaTime);
         }
     }
+
     protected void ShowGainEffect()
     {
         Instantiate(_gainEffectPrefab, transform.position, Quaternion.identity);

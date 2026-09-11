@@ -4,6 +4,7 @@ public class BombAttack : MonoBehaviour
 {
     [SerializeField] private float _bombDamage = 9999f;
     [SerializeField] private float _timer = 3.0f;
+
     private void Update()
     {
         _timer -= Time.deltaTime;
@@ -12,6 +13,7 @@ public class BombAttack : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
     private void OnTriggerEnter2D(Collider2D collider)
     {
         Debug.Log("폭탄 충돌!!!");
