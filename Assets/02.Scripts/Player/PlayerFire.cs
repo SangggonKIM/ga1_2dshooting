@@ -7,10 +7,6 @@ public class PlayerFire : MonoBehaviour
     // 목표: 스페이스바를 누를 때마다 총알을 생성해서 발사하고 싶다.
     // 필요 속성
     // - 총알 프리팹
-    public GameObject BulletPrefab;
-
-    public GameObject AssistBulletPrefab;
-
     // - 생성 위치(총구)
     public Transform[] FirePoint;
     public Transform[] AssistFirePoint;
@@ -23,6 +19,7 @@ public class PlayerFire : MonoBehaviour
     {
         CoolTimer = CoolTime;
     }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Alpha1))
@@ -54,19 +51,20 @@ public class PlayerFire : MonoBehaviour
 
     private void FireBullet()
     {
-        BasicFireBullet(BulletPrefab, FirePoint);
+        BasicFireBullet(FirePoint);
     }
 
     private void FireAssistBullet()
     {
-        BasicFireBullet(AssistBulletPrefab, AssistFirePoint);
+        BasicFireBullet(AssistFirePoint);
     }
 
-    private void BasicFireBullet(GameObject bulletPrefab, Transform[] basicFirePoint)
+    private void BasicFireBullet(Transform[] basicFirePoint)
     {
         foreach (Transform firePoint in basicFirePoint)
         {
-            Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+            Bullet bullet = BulletPool.Instance.GetBullet();
+            bullet.transform.position = firePoint.position;
         }
     }
 
