@@ -7,11 +7,9 @@ public class EnemySpawner : MonoBehaviour
     [Header("스폰 간격")]
     [SerializeField] private float _spawnInterval = 3f;
 
-    [SerializeField] private EnemySpawnData[] _spawnDatas;
+    [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
 
     private float _timer;
-    [SerializeField] private Enemy[] _enemies;
-    [SerializeField] private int[] _chances;
 
     private void Update()
     {
@@ -30,7 +28,7 @@ public class EnemySpawner : MonoBehaviour
     private void Spawn()
     {
         int totalWeight = 0;
-        foreach (EnemySpawnData data in _spawnDatas)
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
         {
             totalWeight += data.Weight;
         }
@@ -40,7 +38,7 @@ public class EnemySpawner : MonoBehaviour
         // Todo: Scriptable Object를 사용해서 리펙토링
         // 이유 1: 배열을 사용했지만 각 아이템이 어떤 프리팹인지 알수가 없음
         // 이유 2: 각 에너미 스폰 확률을 매직 넘버로 하드코딩해서 유지보수가 어렵
-        foreach (EnemySpawnData data in _spawnDatas)
+        foreach (EnemySpawnData data in _spawnDataTable.Datas)
         {
             cumulativeWeight += data.Weight; // 누적
             if (randomWeight < cumulativeWeight) // 구간
