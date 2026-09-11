@@ -2,8 +2,8 @@ using UnityEngine;
 
 public abstract class Enemy : MonoBehaviour
 {
-    [Header("아이템 목록 지정")][SerializeField] private GameObject[] _itemList;
-    [SerializeField] private float[] _spawnProbability;
+    [Header("아이템 목록 지정")]
+    [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTable;
     [SerializeField] private float _damage = 30.0f;
     [SerializeField] private float _health = 100;
     [SerializeField] protected float _moveSpeed = 1.0f;
@@ -14,12 +14,14 @@ public abstract class Enemy : MonoBehaviour
     private AudioSource _damagedaudioSource;
     // - 죽을때 생성할 파티클 프리팹
     [SerializeField] private GameObject _deathEffectPrefab;
+
     private void Awake()
     {
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
         _animator = GetComponent<Animator>();
         _damagedaudioSource = GetComponent<AudioSource>();
     }
+
     private void Update()
     {
         MoveAction();
@@ -61,31 +63,30 @@ public abstract class Enemy : MonoBehaviour
             Debug.LogWarning("플레이어가 NULL 입니다.");
             return;
         }
+
         player.TakeDamage(_damage);
         Destroy(gameObject);
     }
 
     private void ItemSpawn()
     {
-        float total = 0;
-        foreach (float probability in _spawnProbability)
+        float totalWeight = 0;
+        foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
         {
-            total += probability;
+            totalWeight += data.Weight;
         }
 
-        float randomProbability = Random.value * total;
+        float randomWeight = Random.value * totalWeight;
 
-        for (int i = 0; i < _itemList.Length; i++)
+        foreach (ItemSpawnData data in _itemSpawnDataTable.Datas)
         {
-            if (randomProbability < _spawnProbability[i])
+            if (randomWeight < data.Weight)
             {
-                Instantiate(_itemList[i], transform.position, transform.rotation);
+                Instantiate(data.ItemPrefab, transform.position, Quaternion.identity);
                 break;
             }
-            else
-            {
-                randomProbability -= _spawnProbability[i];
-            }
+
+            randomWeight -= data.Weight;
         }
     }
 }
