@@ -51,19 +51,19 @@ public class PlayerFire : MonoBehaviour
 
     private void FireBullet()
     {
-        BasicFireBullet(FirePoint);
+        BasicFireBullet(BulletType.Main, FirePoint);
     }
 
     private void FireAssistBullet()
     {
-        BasicFireBullet(AssistFirePoint);
+        BasicFireBullet(BulletType.Sub, AssistFirePoint);
     }
 
-    private void BasicFireBullet(Transform[] basicFirePoint)
+    private void BasicFireBullet(BulletType bulletType, Transform[] basicFirePoint)
     {
         foreach (Transform firePoint in basicFirePoint)
         {
-            Bullet bullet = BulletPool.Instance.GetBullet();
+            Bullet bullet = BulletPool.Instance.GetBullet(bulletType);
             bullet.transform.position = firePoint.position;
         }
     }

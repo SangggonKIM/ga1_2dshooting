@@ -1319,8 +1319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 584a672076b7fde4d9b3577d64a97c6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerFire
-  BulletPrefab: {fileID: 1031609591815090324, guid: eab0910b2e9ff1c4faf22ff066d1385e, type: 3}
-  AssistBulletPrefab: {fileID: 2451210353159992550, guid: 3198022c14817bd4c90a43bac475e7fa, type: 3}
   FirePoint:
   - {fileID: 1565155477}
   - {fileID: 279033506}
@@ -2915,7 +2913,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: acaa2615d82d8674dabb14939f052848, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BulletPool
-  _bulletPrefab: {fileID: 7680240068513549726, guid: eab0910b2e9ff1c4faf22ff066d1385e, type: 3}
+  _bulletPrefabs:
+  - {fileID: 7680240068513549726, guid: eab0910b2e9ff1c4faf22ff066d1385e, type: 3}
+  - {fileID: -8807683940688018756, guid: 3198022c14817bd4c90a43bac475e7fa, type: 3}
   _poolSize: 50
 --- !u!4 &2064955557
 Transform:
