@@ -54,6 +54,12 @@ public class ScoreManager : MonoBehaviour
     {
         if (score <= 0) return;
         _currentScore += score;
+        ResetBestScore();
+        Refresh();
+    }
+
+    private void ResetBestScore()
+    {
         if (_currentScore > _bestScore)
         {
             _bestScore = _currentScore;
@@ -62,13 +68,20 @@ public class ScoreManager : MonoBehaviour
             PlayerPrefs.SetInt(SaveKey, _bestScore);
             PlayerPrefs.Save();
         }
-
-        Refresh();
     }
 
     private void Refresh()
     {
         _bestScoreText.text = $"Best Score: {_bestScore:N0}";
         _currentScoreText.text = $"Current Score: {_currentScore:N0}";
+    }
+
+    public bool UseScore(int score)
+    {
+        if (score <= 0) return false;
+        if (score > _currentScore) return false;
+        _currentScore -= score;
+        Refresh();
+        return true;
     }
 }
