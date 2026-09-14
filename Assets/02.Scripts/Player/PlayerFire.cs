@@ -30,6 +30,11 @@ public class PlayerFire : MonoBehaviour
         ManualFire();
     }
 
+    public void SetAuto(bool auto)
+    {
+        _autoFireToggle = auto;
+    }
+
     private void ManualFire()
     {
         CoolTimer -= Time.deltaTime;
