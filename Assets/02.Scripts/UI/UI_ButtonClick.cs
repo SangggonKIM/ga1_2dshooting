@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class UI_ButtonClick : MonoBehaviour
 {
     private Button _button;
