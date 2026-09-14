@@ -8,7 +8,7 @@ public class Bullet : MonoBehaviour
     public BulletType Type => _type;
     // 목적: 총알을 위로 움직이고 싶다.
     public float Speed = 1.0f;
-    public float BulletDamage = 1.0f;
+    public int Damage;
 
     private void Awake()
     {
@@ -59,7 +59,8 @@ public class Bullet : MonoBehaviour
             // 결합도란 묻는거.. 매번 묻는거..
             // 무적모드 검사하고
             // 방어력 검사..
-            enemy.TakeDamage(BulletDamage);
+            int finalDamage = Damage + (int)UpgradeManager.Instance.Upgrades[0].CurrentValue;
+            enemy.TakeDamage(finalDamage);
         }
     }
 

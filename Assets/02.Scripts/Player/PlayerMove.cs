@@ -15,6 +15,7 @@ public class PlayerMove : MonoBehaviour
     private Vector2 _yBottomBound = new Vector2(0, -4.72f); // y축 위쪽 이동 제한 범위
 
     public float Speed => _speed;
+
     private void Awake()
     {
         // 애니메이터 컴포넌트에 대한 참조를 가져와서 할당한다.
@@ -44,14 +45,14 @@ public class PlayerMove : MonoBehaviour
         // = Vector2 direction = Vector2.left;
 
 
-
         // 3. 방향과 속도에 따라 이동한다.
         // 속도 = 방향 * 속력
         // transform.Translate(direction * Speed * Time.deltaTime);
         // 매직 넘버란: 마법처럼 보는 사람마다 의미가 달라질 수 있는
         Vector2 normalizedDirection = direction.normalized; // 벡터의 길이를 1로 만들어주는것 ( 즉, 방향만 유지한다.)
         _animator.SetInteger(_animX, (int)normalizedDirection.x);
-        transform.Translate(normalizedDirection * _speed * Time.deltaTime);
+        float finalSpeed = _speed + UpgradeManager.Instance.Upgrades[2].CurrentValue;
+        transform.Translate(normalizedDirection * finalSpeed * Time.deltaTime);
         Vector2 playerPosition = transform.position;
         if (playerPosition.x > _xMoveOhterside.x)
         {

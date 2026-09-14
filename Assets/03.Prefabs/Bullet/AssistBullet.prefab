@@ -283,4 +283,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
   _type: 1
   Speed: 16
-  BulletDamage: 10
+  Damage: 20

@@ -44,7 +44,8 @@ public class PlayerFire : MonoBehaviour
             {
                 FireBullet();
                 FireAssistBullet();
-                CoolTimer = CoolTime;
+                float finalFireRate = CoolTime - UpgradeManager.Instance.Upgrades[1].CurrentValue;
+                CoolTimer = finalFireRate;
             }
         }
     }
