@@ -83,4 +83,8 @@ public class PlayerFire : MonoBehaviour
 
         CoolTime = Math.Max(CoolTime - upValue, MinCoolTime); // 둘중에 가장 높은수를 선택. 최소 쿨타임보다 작을 수 없다.
     }
+
+    // todo: 버튼 클릭할 때 애니메이션 주기 + 사운드 주기
+    // 애니메이션: 코드로 구현 약간 커졌다가 원래대로..
+    // 사운드: 일레븐랩스에서 버튼 클릭 공용 사운드 만들어서 적용
 }
