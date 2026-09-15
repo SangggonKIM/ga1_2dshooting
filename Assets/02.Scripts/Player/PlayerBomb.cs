@@ -9,6 +9,7 @@ public class PlayerBomb : MonoBehaviour
     [SerializeField] private float _bombYMaxRange = 5.0f;
     [SerializeField] private float _bombYMinRange;
     private float _coolTimer = 0;
+
     private void Start()
     {
         _coolTimer = _coolTime;
@@ -24,13 +25,15 @@ public class PlayerBomb : MonoBehaviour
         _coolTimer -= Time.deltaTime;
         if (_coolTimer <= 0)
         {
-            if (Input.GetKey(KeyCode.B))
+            if (SimpleInput.GetButton("Bomb"))
             {
                 for (int i = 0; i < _spawnNumber; i++)
                 {
-                    Vector2 bombPosition = new Vector2(Random.Range(-_bombXRange, _bombXRange), Random.Range(_bombYMinRange, _bombYMaxRange));
+                    Vector2 bombPosition = new Vector2(Random.Range(-_bombXRange, _bombXRange),
+                        Random.Range(_bombYMinRange, _bombYMaxRange));
                     Instantiate(_bomb, bombPosition, Quaternion.identity);
                 }
+
                 _coolTimer = _coolTime;
             }
         }
