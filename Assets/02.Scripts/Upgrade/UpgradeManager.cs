@@ -1,3 +1,4 @@
+using UnityEditor.Overlays;
 using UnityEngine;
 
 public class UpgradeManager : MonoBehaviour
@@ -8,6 +9,7 @@ public class UpgradeManager : MonoBehaviour
 
     [SerializeField] private Upgrade[] _upgrades;
     public Upgrade[] Upgrades => _upgrades;
+    private const string SaveKey = "UpgradeLevel";
 
     // 업그레이드 UI들
     [SerializeField] private UI_Upgrade[] _uiUpgrades;
@@ -25,11 +27,14 @@ public class UpgradeManager : MonoBehaviour
 
     private void Start()
     {
+        Load();
+
         RefreshUI();
     }
 
     public void LevelUp(int index)
     {
+        // Todo: 묻지말고 시켜라
         // 골드 매니저에게 있는지 물어보고 돈이 있다면 차감 후 업그레이드 호출
 
         Upgrade upgrade = _upgrades[index];
@@ -42,6 +47,9 @@ public class UpgradeManager : MonoBehaviour
         ScoreManager.Instance.SpendScore((upgrade.Cost));
 
         _upgrades[index].LevelUp();
+
+        Save();
+
         RefreshUI();
     }
 
@@ -52,5 +60,20 @@ public class UpgradeManager : MonoBehaviour
         {
             uiUpgrade.Refresh();
         }
+    }
+
+    private void Save()
+    {
+        // 데이터 저장은 유의미한 정보만 저장을 한다.
+        // 그래서 레벨만 저장을 한다.
+        for (int i = 0; i < _upgrades.Length; i++)
+        {
+            int level = PlayerPrefs.GetInt(SaveKey, _upgrades[i].Level);
+            _upgrades[i].SetLevel(level);
+        }
+    }
+
+    private void Load()
+    {
     }
 }
