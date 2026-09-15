@@ -8,6 +8,7 @@ public class EnemySpawner : MonoBehaviour
     [SerializeField] private float _spawnInterval = 3f;
 
     [SerializeField] private EnemySpawnDataTableSO _spawnDataTable;
+    [SerializeField] private EnemyBalanceDataTableSO _balanceDataTable;
 
     private float _timer;
 
@@ -45,8 +46,27 @@ public class EnemySpawner : MonoBehaviour
             {
                 GameObject enemy = Instantiate(data.EnemyPrefab);
                 enemy.transform.position = transform.position;
+                enemy.GetComponent<Enemy>().SetHealthBalance(GetHealthMultiplier());
                 break;
             }
         }
+    }
+
+    private float GetHealthMultiplier()
+    {
+        int bestScore = ScoreManager.Instance.BestScore;
+        // Todo: BestScore에 따라 밸런스데이터의 multi 뭐시기 반환
+        foreach (EnemyBalanceData data in _balanceDataTable.Datas)
+        {
+            if (bestScore < data.RequiredScore)
+            {
+                return data.HealthMultiplier;
+            }
+        }
+        // 없다면 제일 마지막 값 반환
+
+        int lastIndex = _balanceDataTable.Datas.Length - 1;
+
+        return _balanceDataTable.Datas[lastIndex].HealthMultiplier;
     }
 }

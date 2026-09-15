@@ -182,8 +182,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyLinearDown
   _itemSpawnDataTable: {fileID: 11400000, guid: 8e73582ce234f474589b2c1efccf0ccb, type: 2}
-  _damage: 30
+  _baseHealth: 60
   _health: 100
+  _damage: 30
   _moveSpeed: 1
   _deathEffectPrefab: {fileID: 725748389856807714, guid: 4bda94453d2ca7444a0fff05b2d425f5, type: 3}
 --- !u!95 &8101504068616950237

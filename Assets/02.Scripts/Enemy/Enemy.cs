@@ -4,7 +4,8 @@ public abstract class Enemy : MonoBehaviour
 {
     [Header("아이템 목록 지정")]
     [SerializeField] private ItemSpawnDataTableSO _itemSpawnDataTable;
-    [SerializeField] private float _health = 100;
+    [SerializeField] private int _baseHealth; // 적의 기준체력
+    [SerializeField] private float _health = 100; // 적의 현재체력
     [SerializeField] private float _damage = 30.0f;
     [SerializeField] protected float _moveSpeed = 1.0f;
     private bool _isDead = false;
@@ -25,6 +26,11 @@ public abstract class Enemy : MonoBehaviour
     private void Update()
     {
         MoveAction();
+    }
+
+    public void SetHealthBalance(float multiplier)
+    {
+        _health = (int)(_health * multiplier);
     }
 
     protected abstract void MoveAction();
