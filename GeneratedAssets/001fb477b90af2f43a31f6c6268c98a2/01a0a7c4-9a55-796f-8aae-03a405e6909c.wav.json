@@ -1,0 +1,15 @@
+{
+    "asset": "001fb477b90af2f43a31f6c6268c98a2",
+    "fileName": "01a0a7c4-9a55-796f-8aae-03a405e6909c.wav",
+    "prompt": "Short punchy cartoon arcade bomb explosion sound effect, energetic 2D shooting game SFX, powerful low-frequency boom, sharp burst impact, quick explosive tail, subtle cartoon debris crackle, clean one-shot audio, fun exaggerated action game explosion, no music, no background noise",
+    "negativePrompt": "",
+    "model": "elevenlabs-sound-effects-v2",
+    "modelName": "ElevenLabs Sound Effects V2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "duration": 1.0,
+    "autoTrim": false,
+    "hasReference": false,
+    "voice": ""
+}

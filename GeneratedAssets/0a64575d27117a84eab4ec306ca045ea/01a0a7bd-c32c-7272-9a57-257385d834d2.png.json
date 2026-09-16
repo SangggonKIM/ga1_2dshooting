@@ -1,0 +1,31 @@
+{
+    "asset": "0a64575d27117a84eab4ec306ca045ea",
+    "fileName": "01a0a7bd-c32c-7272-9a57-257385d834d2.png",
+    "prompt": "A classic 16-bit pixel art item sprite of a round black metal bomb for a 2D retro arcade shooting game. Clearly visible individual pixels, crisp hard pixel edges, no anti-aliasing, no smooth gradients, limited 16-color retro palette, cute slightly cartoonish style. A round black spherical bomb with chunky pixel highlights and shadow, thick dark pixel outline, a short curved brown fuse on top, and a bright glowing pixel-art orange and yellow flame spark at the tip of the fuse. Centered single object, isolated on a pure transparent background, with empty space padding around the sprite. No character, no background scenery, no text, no UI.",
+    "negativePrompt": "",
+    "model": "gemini-3.1-flash",
+    "modelName": "Gemini 3.1 Nano Banana 2",
+    "customSeed": -1,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelatePixelGridSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0,
+    "dimensions": {
+        "width": 1024,
+        "height": 1024
+    },
+    "spriteSheet": false,
+    "duration": 0.0,
+    "dynamicParams": {
+        "serializedData": []
+    }
+}
